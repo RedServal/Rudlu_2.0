@@ -1,11 +1,13 @@
 ```
 Liste des commandes : 
 :noweeb	| en cas de force majeur 
-:blaguevalide | en cas de blague limite mais valide
-:is [...] gay ? | pour connaitre la vertie 
+:blaguevalide | en cas de blague limite mais validée
+:is [...] gay ? | pour connaître la verité 
 :yeet @qqn | pour le yeet dans le channel afk
 :yeet random | pour un max de lulz 
-:jpg | pour obtenir une qualitee sans precedent 
+:jpg | pour obtenir une qualitée sans precedent 
 :swirl (force optionnelle, 5 par defaut) | pour tourbilloner de folie 
-Et d'autres fonctionnalites secretes
+:morse [text] | au cas où
+:heenok | pour atteindre le savoir absolu jeune fanatique
+Et d'autres fonctionnalitées secrètes
 ```

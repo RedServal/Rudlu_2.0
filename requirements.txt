@@ -4,5 +4,5 @@ pandas
 dnspython==1.16.0
 requests
 Pillow
-ffmpeg
 scikit-image
+opencv-python-headless

@@ -1,5 +1,5 @@
 #id = 592275943406436373
-#Token = NTkyMjc1OTQzNDA2NDM2Mzcz.XQ8--w.WGVrHo_4wdf0krYyyLm9TiKDtGI
+#Token = NTkyMjc1OTQzNDA2NDM2Mzcz.XnDbLA.f_zX6QpMUmNqSuU55YBg_Nv_XSo
 #permission = 129088
 #https://discordapp.com/oauth2/authorize?client_id=592275943406436373&scope=bot&permissions=8
 
@@ -8,9 +8,9 @@ import random
 import os
 from PIL import Image
 import requests
-import ffmpeg
+#import ffmpeg
 
-import weeb
+import data
 import modif_image
 
 import discord
@@ -59,13 +59,36 @@ async def on_message(message):
         return
 
     if message.content.startswith(':noweeb'):
-        await message.channel.send(weeb.choose_weeb())
+        await message.channel.send(data.choose_weeb())
 
     if message.content.startswith(':blaguevalide'):
         await message.channel.send('https://www.youtube.com/watch?v=eW4c3vTdU54')
 
     if message.content.startswith(':is ') and (message.content.endswith('gay?') or message.content.endswith('gay ?')):
         await message.channel.send('yes')
+
+    if message.content.startswith(':morse'):
+        msg=""
+        msg_util=message.content.upper()
+        msg_util=msg_util.strip(":MORSE ")
+        for i in msg_util :
+            if i not in data.morse :
+                msg+=" "
+            else :
+                msg+=data.morse[i]
+                msg+=" "
+        await message.channel.send(msg)
+
+    if message.content.startswith('pierre') :
+        await message.channel.send("feuille")
+        await message.channel.send("J'ai gagné !")
+    if message.content.startswith('feuille') :
+        await message.channel.send("ciseaux")
+        await message.channel.send("J'ai gagné !")
+    if message.content.startswith('ciseaux') :
+        await message.channel.send("pierre")
+        await message.channel.send("J'ai gagné !")
+
 
     if message.content.startswith(':yeet_tonin') :
         serv = client.get_guild(470974497781186560)
@@ -154,6 +177,7 @@ async def on_message(message):
             await message.add_reaction('❌')
 
 
+
 #await message.channel.send('Bruh moment')
 
     if message.content.startswith(':victimisation') :       #victimisation True/False proba temps id_victime
@@ -172,7 +196,6 @@ async def on_message(message):
 
 
     await client.process_commands(message)
-
 
 
 async def background_loop() :
@@ -202,6 +225,8 @@ async def yeet(ctx, member : discord.Member, *, reason=None):
 @client.command(pass_context=True)
 async def tg(ctx) :
     await ctx.message.channel.send('Fermes ta gueule', tts=True)
+
+
 
 @client.command(pass_context=True)
 async def groscerveau(ctx) :
@@ -243,6 +268,7 @@ async def groscerveau(ctx) :
     else :
         await ctx.message.add_reaction('❌')
 
+
 @client.command(pass_context=True)
 async def swirl(ctx) :
     success = False
@@ -276,10 +302,17 @@ async def swirl(ctx) :
     else :
         await ctx.message.add_reaction('❌')
 
+
 @client.command(pass_context=True)
 async def help(ctx) :
-    await ctx.message.channel.send(open("help.txt", "r").read())
+    await ctx.message.channel.send(open("help.txt", "r",encoding='utf-8').read())
 
+@client.command(pass_context=True)
+async def heenok(ctx) :
+    await ctx.message.channel.send(random.choice(list(open('lyrics.txt','r',encoding='utf-8'))),tts=True)
+
+
+"""
 @client.command(pass_context=True)
 async def indignite(ctx):
     chan = ctx.message.author.voice.channel
@@ -287,6 +320,7 @@ async def indignite(ctx):
     vc.play(discord.FFmpegPCMAudio('indignite.mp3'), after=lambda e: print('done', e))
     await asyncio.sleep(5)
     await vc.disconnect()
+
 
 @client.command(pass_context=True)
 async def leave(ctx) :
@@ -296,12 +330,7 @@ async def leave(ctx) :
 
 
 """
-@client.command(pass_context=True)
-async def rename(ctx, member : discord.Member,*, nickname):
-    print("yoy")
-    await member.change_nickname(member, nickname)
-"""
 
 
 #client.loop.create_task(background_loop())
-client.run("NTkyMjc1OTQzNDA2NDM2Mzcz.XQ8--w.WGVrHo_4wdf0krYyyLm9TiKDtGI")
+client.run("NTkyMjc1OTQzNDA2NDM2Mzcz.XnDbLA.f_zX6QpMUmNqSuU55YBg_Nv_XSo")
