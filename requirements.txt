@@ -6,3 +6,8 @@ requests
 Pillow
 scikit-image
 opencv-python-headless
+pytube3
+pydub
+glitch_this
+tweepy
+bs4
