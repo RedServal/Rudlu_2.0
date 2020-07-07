@@ -5,8 +5,8 @@ import random
 import discord
 
 #Google CSE
-API_key = "AIzaSyD5I9DDwiIFIL2aNMzovsYeie7yce9JGE8"
-cx = "002143315822336798488:wiqqznfe5po"
+API_key = "XXXXXXXXXXXXXXX"
+cx = "XXXXXXXXXXXXXXX"
 
 def stock(mot) :
     r = requests.get("https://www.googleapis.com/customsearch/v1?key=" + API_key + "&cx=" + cx + "&q=" + mot + "&searchType=image&imgSize=xlarge&num=10&start=1")
